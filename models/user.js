@@ -5,6 +5,7 @@ const userSchema = new mongoose.Schema({
 	username: { type: String, required: true },
 	currentRank: { type: String, default: 'Guest', required: true },
 	dateJoined: { type: Date, default: Date.now },
+	// Rank history fields
 	history: {
 		becameNeophyteAt: Date,
 		becameBrotherAt: Date,
@@ -39,7 +40,10 @@ const userSchema = new mongoose.Schema({
 		promotedToChapterCommandAt: Date,
 		promotedToRavensNestAt: Date,
 	},
-	AARPoints: { type: Number, default: 0, required: true },
+	// Game stats
+	aarPoints: { type: Number, default: 0, required: true },
+	honorsObtained: { type: [String], default: [], required: true },
+	mostPlayedWith: { type: [String], default: [], required: true },
 });
 
 module.exports = mongoose.model('User', userSchema);
