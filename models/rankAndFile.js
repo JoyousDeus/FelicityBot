@@ -6,11 +6,13 @@ const rankAndFileSchema = new mongoose.Schema({
 		{
 			companyId: { type: String, required: true, unique: true },
 			companyName: { type: String, required: true, unique: true },
+			companyCaptain: { type: String, required: true, unique: true },
 			// Squads within the company
 			squads: [
 				{
 					squadId: { type: String, required: true, unique: true },
 					squadName: { type: String, required: true, unique: true },
+					squadLeader: { type: String, required: true, unique: true },
 					squadMemberCount: {
 						type: Number,
 						required: true,
